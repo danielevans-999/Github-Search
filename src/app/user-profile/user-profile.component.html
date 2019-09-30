@@ -1,1 +1,39 @@
-<p>user-profile works!</p>
+<form class="search-form" (ngSubmit)= "findProfile()">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="git-hub username" [(ngModel)]='username' name='username'
+            >
+            <button type="submit" class="btn btn-info">search</button>
+    </div>
+</form>
+<div *ngIf="profile">
+    <div class="card">
+        <div class="card-header bg-secondary">
+            {{profile.name}} <small>{{profile.login}}</small>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="rounded-circle img-responsive" src="{{profile.avatar_url }}">
+                </div>
+                <div class="col-sm-5">
+                    <ul class="list-group">
+                        <li *ngIf='profile.type' class="list-group-item"><strong> Name:</strong>{{profile.name}} </li>
+                        <li *ngIf='profile.type' class="list-group-item"><strong> UserTpe:</strong>{{profile.type}} </li>
+                        <li *ngIf='profile.type' class="list-group-item"><strong> Login:</strong>{{profile.login}} </li>
+                       
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <p>
+                        <span class="badge badge-info m-1">{{profile.followers}} Followers</span>
+                        <span class="badge badge-success m-1">Following {{profile.following}}</span>
+                        <span class="badge badge-warning m-1">{{profile.public_gists}} Public gists</span>
+                        <span class="badge badge-danger m-1">{{profile.public_repos}} Public repos</span>
+                    </p>
+                    <p><a href="{{profile.html_url}}" class="btn btn-success btn-sm" target="blank">View Profile</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
