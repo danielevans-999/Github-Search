@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {RequestsService} from "./requests.service"
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { UserReposComponent } from './user-repos/user-repos.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserReposComponent
   ],
   imports: [
     BrowserModule,
