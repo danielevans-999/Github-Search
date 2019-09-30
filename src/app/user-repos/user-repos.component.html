@@ -16,7 +16,7 @@
     <div class="row">
         <div class="card m-1 col-sm-4" *ngFor='let repo of repos '>
             <div class="card-header-header">
-                <h5>{{repo.name}}</h5>
+                <h5>{{repo.name |lower}}</h5>
             </div>
 
             <div class="card-body">
