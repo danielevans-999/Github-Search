@@ -13,7 +13,7 @@ export class RequestsService {
   username:string;
 
   constructor(private http: HttpClient) {
-    this.user = new User("", "", "", 0, 0, 0);
+    this.user = new User("", "", "", 0, 0, 0,new Date);
     this.repos = new Repo("", "", "");
     this.username = 'danielevans-999'
   }
@@ -27,6 +27,7 @@ export class RequestsService {
       public_repos: number;
       followers: number;
       following: number;
+       created_at:Date;
     }
 
     let promise = new Promise((resolve, reject) => {
@@ -54,18 +55,19 @@ export class RequestsService {
     return promise;
   }
 
-  getRepos(username: string) {
+  getRepos() {
     interface RepoResponse {
       name: string;
       description: string;
       html_url: string;
+
     }
 
     let promise = new Promise((resolve, reject) => {
       this.http
         .get<RepoResponse>(
           "https://api.github.com/users/" +
-            username +
+            this.username +
             "/repos?access_token=" +
             environment.accesstoken
         )
