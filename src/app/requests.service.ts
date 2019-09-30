@@ -10,13 +10,16 @@ import { Repo } from "./repo";
 export class RequestsService {
   user: User;
   repos: Repo;
+  username:string;
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, 0, 0);
     this.repos = new Repo("", "", "");
+    this.username = 'danielevans-999'
   }
 
-  getProfileInfo(username: string) {
+  getProfileInfo() {
+    
     interface ApiResponse {
       name: string;
       login: string;
@@ -30,7 +33,7 @@ export class RequestsService {
       this.http
         .get<ApiResponse>(
           "https://api.github.com/users/" +
-            username +
+           this.username +
             "?access_token=" +
             environment.accesstoken
         )
@@ -81,5 +84,9 @@ export class RequestsService {
         );
     });
     return promise;
+  }
+
+  updateUserName(username:string){
+    this.username = username;
   }
 }
