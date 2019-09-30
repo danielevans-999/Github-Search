@@ -1,15 +1,15 @@
-<form class="search-form" (ngSubmit)= "findProfile()">
+<form class="search-form" (ngSubmit)="findProfile()">
     <div class="form-group form-inline">
-        <input type="text" class="form-control mt-2 ml-5" placeholder="git-hub username" [(ngModel)]='username' name='username'
-            >
-           <button type="submit" class="btn btn-info ml-3"><i class="fas fa-search"></i></button>
+        <input type="text" class="form-control mt-2 ml-5" placeholder="git-hub username" [(ngModel)]='username'
+            name='username'>
+        <button type="submit" class="btn btn-info ml-3"><i class="fas fa-search"></i></button>
     </div>
 </form>
 <div id="home">
-        <p class="text-center"><strong>GIT-HUB SEARCH - </strong>this is an Application that helps One to , <br>easily
-            access ones git-hub account without
-            much strain of remembering passwords </p>
-    </div>
+    <p class="text-center"><strong>GIT-HUB SEARCH - </strong>this is an Application that helps One to , <br>easily
+        access ones git-hub account without
+        much strain of remembering passwords </p>
+</div>
 <div *ngIf="profile">
     <div class="card">
         <div class="card-header bg-secondary">
@@ -23,9 +23,10 @@
                 <div class="col-sm-5">
                     <ul class="list-group">
                         <li *ngIf='profile.type' class="list-group-item"><strong> Name:</strong>{{profile.name}} </li>
-                        <li *ngIf='profile.type' class="list-group-item"><strong> UserTpe:</strong>{{profile.type}} </li>
+                        <li *ngIf='profile.type' class="list-group-item"><strong> UserTpe:</strong>{{profile.type}}
+                        </li>
                         <li *ngIf='profile.type' class="list-group-item"><strong> Login:</strong>{{profile.login}} </li>
-                       
+
                     </ul>
                 </div>
                 <div class="col-sm-3">
