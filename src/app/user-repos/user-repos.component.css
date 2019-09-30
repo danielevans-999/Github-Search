@@ -1,3 +1,15 @@
 input{
     width: 70px;;
 }
+
+#home{
+    background-color: midnightblue;
+    color: white;
+    font-size: 24px;
+    height: 500px;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 150px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqA1UbQgE63laj5WedaP-o9LaUH7J-GKmsOGq-KKW-76MGQQdi);
+    background-size: cover;
+}
+
