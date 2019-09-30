@@ -19,7 +19,7 @@ export class UserReposComponent implements OnInit {
 
   findRepos(){
   this.repoService.updateUserName(this.username);
-  this.repoService.getProfileInfo();
+  this.repoService.getRepos();
   this.repos = this.repoService.repos;
   }
 
