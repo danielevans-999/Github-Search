@@ -7,9 +7,16 @@ import {RequestsService} from '../requests.service'
 })
 export class UserProfileComponent implements OnInit {
   profile:any
+  username:string;
 
-  constructor(private userService:RequestsService) { }
+  constructor(private userService:RequestsService) {
 
+   }
+findProfile(){
+this.userService.getProfileInfo(this.username);
+this.profile = this.userService.user;
+
+}
   ngOnInit() {
   }
 
