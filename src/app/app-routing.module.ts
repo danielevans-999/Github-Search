@@ -8,7 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
  { path:'home', component:HomeComponent},
  {path:'user',component:UserProfileComponent},
- {path:'repos',component:UserReposComponent}
+ {path:'repos',component:UserReposComponent},
+ {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
 
 @NgModule({
