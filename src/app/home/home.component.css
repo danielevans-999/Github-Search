@@ -9,3 +9,19 @@
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqA1UbQgE63laj5WedaP-o9LaUH7J-GKmsOGq-KKW-76MGQQdi);
     background-size: cover;
 }
+
+#pic1{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.profile-info{
+    font-family:'Montserrat', sans-serif ;
+}
+
+#name:hover{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
