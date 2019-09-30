@@ -8,13 +8,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import {RequestsService} from "./requests.service"
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { UserReposComponent } from './user-repos/user-repos.component'
+import { UserReposComponent } from './user-repos/user-repos.component';
+import { TimecountPipe } from './timecount.pipe'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UserProfileComponent,
-    UserReposComponent
+    UserReposComponent,
+    TimecountPipe
   ],
   imports: [
     BrowserModule,
