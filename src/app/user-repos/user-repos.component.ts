@@ -1,4 +1,6 @@
+import { RequestsService } from '../requests.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-user-repos',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserReposComponent implements OnInit {
 
-  constructor() { }
+  repos:any
+  username:string ;
+
+  constructor(private repoService:RequestsService) { 
+
+  }
+
+
+  findRepos(){
+  this.repoService.updateUserName(this.username);
+  this.repoService.getProfileInfo();
+  this.repos = this.repoService.repos;
+  }
 
   ngOnInit() {
   }
